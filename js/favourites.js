@@ -1,6 +1,9 @@
+
+// show the result when user comes on the favourites.js page
  async function showinfo(){
     let i=0;
     let timeout = setInterval(async function(){
+     // fetch the superhero ids from the localstorege
         let key = localStorage.key(i);
         let id = localStorage.getItem(key);
         if(i>=localStorage.length){
@@ -11,6 +14,7 @@
         if(id!=null){
         console.log('in xhr');
         var xhrRequest = new XMLHttpRequest();
+         // send the request for superhero which is clicked
         xhrRequest.open('get', 'https://www.superheroapi.com/api.php/1143731702657411/' + id);
         xhrRequest.send();
         xhrRequest.onload = async function(){
@@ -29,7 +33,7 @@
     
    
 }
-
+// append result into the body
 function appendheros(response){
        return  `
             <div><img src = ${response.image.url}></div>
@@ -41,7 +45,7 @@ function appendheros(response){
 }
 
 showinfo();
-
+// deleting the hero from the favourites page
 function deleteHero(){
       let length = localStorage.length;
       console.log(length);
