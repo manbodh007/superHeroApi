@@ -3,8 +3,10 @@
 let timeout;
 let timeout2;
 let count =0;
+
 function main(){
    window.localStorage.clear();
+   // fetching the input value given from user and call the debounce function
    var input = document.getElementById('input');
    if(input!= null)
    input.oninput = debounce;
@@ -33,7 +35,7 @@ function main(){
 
        
 }
-
+// using this debounce function to minimize the api search request
 function debounce(e){
   
   clearTimeout(timeout);
@@ -42,7 +44,7 @@ function debounce(e){
   },500);
  
 }
-
+// appending the heros into the body
 function appendHero(response,i){
          var element = document.createElement('div');
          var a = document.createElement('button');
@@ -70,7 +72,7 @@ function appendHero(response,i){
 main();
 superHeroPage();
 favouriteList();
-
+// handle the click event to show more information about the hero
 function superHeroPage(){
      let id = setInterval(function(){
       var aTag = document.querySelectorAll('.link');
@@ -83,7 +85,7 @@ function superHeroPage(){
       }
      },100);
 };
-
+// handle the click event to add the favourites hero into a list
 function favouriteList(){
  let id = setInterval(function(){
   var favBtn = document.getElementsByClassName('fav-btn');
@@ -95,6 +97,7 @@ function favouriteList(){
  },100);
   
 }
+// debounce for favourites list function
 function debounceForClick(i){
   clearTimeout(timeout2)
   timeout2 = setTimeout(function(){
