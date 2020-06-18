@@ -1,0 +1,31 @@
+
+body{
+    background-color: rgb(206, 215, 255);
+}
+#favourites{
+    width: 70%;
+    height: auto;
+    margin-left: 15%;
+    box-sizing: border-box;
+}
+img{
+    width: 130px;
+    height: 70px;
+}
+.heros{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background-color: white;
+    padding: 5px;
+    align-items: center;
+    border: 4px solid;
+}
+p{
+    padding: 10px;
+    background-color: chartreuse;
+    text-transform: capitalize;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 24px;
+    text-align: center;
+}
