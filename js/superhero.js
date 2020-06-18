@@ -1,4 +1,6 @@
+// show the more info of superhero
 function showInfo(){
+      // get the superhero name from local storage  and make call for it.
       superHeroName = window.localStorage.getItem('superHero');
       console.log(superHeroName);
        var xhrRequest = new XMLHttpRequest();
@@ -9,7 +11,7 @@ function showInfo(){
           appendElement(response);
       }
 }
-
+// appending the result into the body
 function appendElement(response){
        var result = response.results[0];
        var powerstats = result.powerstats;
